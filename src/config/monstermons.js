@@ -9,7 +9,7 @@ import shadowyImage from "../images/shadowy.png";
 export const monstermons = [
   {
     id: "001",
-    name: "Drillix",
+    name: "Drillix ",
     image: drillixImage,
     categories: []
   },
