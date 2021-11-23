@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { Monstermon } from "./Monstermon";
 
-function App() {
+import { Header } from "./Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./styles.css";
+import { MonstermonGrid } from "./MonstermonGrid";
+import { createContext, useState } from "react";
+import { monstermons } from "./config/monstermons";
+import { MonstermonDetailPage } from "./MonstermonDetailPage";
+
+export const ListingParamsContext = createContext();
+
+function filterMonstermons(monstermons, selectedCategory) {
+  return monstermons.filter((monstermon) => {
+    if (!selectedCategory) return true;
+    return monstermon.categories.includes(selectedCategory);
+  });
+}
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MonstermonListing />}>
+          <Route path=":monstermonId" element={<MonstermonDetailPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export function MonstermonListing() {
+  const [selectedCategory, _setSelectedCategory] = useState("");
+  const setSelectedCategory = (value) => {
+    console.log(value);
+    _setSelectedCategory(value);
+  };
+
+  const filteredMonstermons = filterMonstermons(monstermons, selectedCategory);
+
+  return (
+    <div className="App">
+      <ListingParamsContext.Provider
+        value={{ selectedCategory, setSelectedCategory }}
+      >
+        <Header />
+        <hr />
+
+        <MonstermonGrid style={{ "--card-width": "10em", "--card-gap": "1em" }}>
+          {filteredMonstermons.map(({ id, image }) => (
+            <Monstermon key={id} id={id} image={image} />
+          ))}
+          {/* <Monstermon id="001" image={drillixImage} />
+          <Monstermon id="002" image={krokalisImage} />
+          <Monstermon id="003" image={puncinoImage} /> */}
+        </MonstermonGrid>
+      </ListingParamsContext.Provider>
+    </div>
+  );
+}

@@ -1,0 +1,32 @@
+* {
+  font-family: "Comic Sans MS";
+}
+
+header {
+  width: 100%;
+  height: 5em;
+  background-color: lightblue;
+}
+
+.monstermon-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+
+  grid-gap: var(--card-gap);
+}
+
+.monstermon-card {
+  width: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.monstermon-card img {
+  width: 100%;
+}
+
+.monstermon-card p {
+  margin: 0;
+}
