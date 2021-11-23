@@ -1,7 +1,7 @@
-export function Monstermon({ id, image }) {
+export function Monstermon({ id, name, image }) {
   return (
-    <div className="monstermon-card">
-      <img src={image} />
+    <div className="monstermon-card" key={id}>
+      <img src={image} alt={name} />
       <p>{id}</p>
     </div>
   );
