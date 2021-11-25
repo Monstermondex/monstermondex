@@ -22,10 +22,20 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MonstermonListing />}>
-          <Route path=":monstermonId" element={<MonstermonDetailPage />} />
-        </Route>
+        <Route path="/" element={<MonstermonListing />} />
+        <Route path="monstermons" element={<MonstermonListing />} />
+        <Route
+          path="monstermons/:monstermonId"
+          element={<MonstermonDetailPage />}
+        />
       </Routes>
+      {/*<Route path="/">
+          <Route index element={<MonstermonListing />} />
+          <Route path="monstermons" element={<MonstermonListing />}>
+            <Route path=":monstermonId" element={<MonstermonDetailPage />} />
+          </Route>
+        </Route>
+       </Routes>*/}
     </BrowserRouter>
   );
 }
