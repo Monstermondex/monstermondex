@@ -1,10 +1,10 @@
 import drillixImage from "../images/drillix.jpg";
 import krationImage from "../images/kration.jpg";
 import krokalisImage from "../images/krokalis.jpg";
-import puncinoImage from "../images/puncino.png";
+import puncinoImage from "../images/puncino.jpg";
 import sarulyImage from "../images/saruly.jpg";
-import dudriaImage from "../images/dudria.png";
-import shadowyImage from "../images/shadowy.png";
+import dudriaImage from "../images/dudria.jpg";
+import shadowyImage from "../images/shadowy.jpg";
 
 export const monstermons = [
   {
