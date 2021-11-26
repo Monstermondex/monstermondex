@@ -12,7 +12,7 @@ export function MonstermonDetailPage() {
         Monstermon {monstermon.id}: {monstermon.name}
       </h3>
 
-      <img src={monstermon.image} style={{ width: "50%" }} />
+      <img src={monstermon.image} style={{ width: "50%" }} alt={monstermon.name} />
     </div>
   );
 }
