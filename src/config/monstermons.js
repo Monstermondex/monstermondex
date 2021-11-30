@@ -11,7 +11,13 @@ export const monstermons = [
     id: "001",
     name: "Drillix",
     image: drillixImage,
-    categories: []
+    categories: [],
+    hp: 180,
+    attacks: [
+      ["Drill", 60],
+      ["Grassstorm", 100],
+      ["Leaf-kuter", 90]
+    ]
   },
   {
     id: "002",
@@ -29,7 +35,13 @@ export const monstermons = [
     id: "004",
     name: "Kration",
     image: krationImage,
-    categories: ["Halloween"]
+    categories: ["Halloween"],
+    hp: 270,
+    attacks: [
+      ["shadowClaw", 130],
+      ["skellyBeam", 110],
+      ["SuperShadow", 120]
+    ]
   },
   {
     id: "005",

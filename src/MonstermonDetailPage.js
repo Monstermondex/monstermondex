@@ -9,10 +9,20 @@ export function MonstermonDetailPage() {
     <div>
       <Link to="/">Back to list</Link>
       <h3>
-        Monstermon {monstermon.id}: {monstermon.name}
+        Monstermon {monstermon.id}: {monstermon.name}{" "}
+        {monstermon.hp ? `(HP ${monstermon.hp})` : null}
       </h3>
 
-      <img src={monstermon.image} style={{ width: "50%" }} alt={monstermon.name} />
+      <img
+        src={monstermon.image}
+        style={{ width: "50%" }}
+        alt={monstermon.name}
+      />
+      {monstermon?.attacks?.map(([name, value]) => (
+        <li>
+          {name}: {value}
+        </li>
+      ))}
     </div>
   );
 }
