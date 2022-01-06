@@ -5,6 +5,7 @@ import puncinoImage from "../images/puncino.jpg";
 import sarulyImage from "../images/saruly.jpg";
 import dudriaImage from "../images/dudria.jpg";
 import shadowyImage from "../images/shadowy.jpg";
+import sleepyduxImage from "../images/sleepydux.png";
 
 export const monstermons = [
   {
@@ -60,5 +61,11 @@ export const monstermons = [
     name: "Shadowy",
     image: shadowyImage,
     categories: ["Halloween"]
+  },
+  {
+    id: "008",
+    name: "Sleepydux",
+    image: sleepyduxImage,
+    categories: []
   }
 ];

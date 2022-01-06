@@ -18,6 +18,18 @@ function filterMonstermons(monstermons, selectedCategory) {
   });
 }
 
+function filterMonsterMonsBySearchQuery(monstermons, query) {
+  return monstermons.filter(({ id, name }) => {
+    const monstermonTokens = `${id} ${name}`.toLowerCase().split(" ");
+    const searchTokens = query.toLowerCase().trim().split(" ");
+    return searchTokens.every((sToken) =>
+      monstermonTokens.some((mToken) => {
+        return mToken.indexOf(sToken) !== -1;
+      })
+    );
+  });
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -41,24 +53,30 @@ export default function App() {
 }
 
 export function MonstermonListing() {
-  const [selectedCategory, _setSelectedCategory] = useState("");
-  const setSelectedCategory = (value) => {
-    console.log(value);
-    _setSelectedCategory(value);
-  };
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredMonstermons = filterMonstermons(monstermons, selectedCategory);
+  const filteredMonstermons1 = filterMonstermons(monstermons, selectedCategory);
+  const filteredMonstermons2 = filterMonsterMonsBySearchQuery(
+    filteredMonstermons1,
+    searchQuery
+  );
 
   return (
     <div className="App">
       <ListingParamsContext.Provider
-        value={{ selectedCategory, setSelectedCategory }}
+        value={{
+          selectedCategory,
+          setSelectedCategory,
+          searchQuery,
+          setSearchQuery
+        }}
       >
         <Header />
         <hr />
 
         <MonstermonGrid style={{ "--card-width": "10em", "--card-gap": "1em" }}>
-          {filteredMonstermons.map(({ id, image }) => (
+          {filteredMonstermons2.map(({ id, image }) => (
             <Monstermon key={id} id={id} image={image} />
           ))}
           {/* <Monstermon id="001" image={drillixImage} />
