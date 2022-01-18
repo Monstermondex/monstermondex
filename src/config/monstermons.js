@@ -19,20 +19,22 @@ export const monstermons = [
       ["Grassstorm", 100],
       ["Leaf-kuter", 90]
     ],
-    home: "Sweaty Jungle",
+    area: "Sweaty Jungle",
     hasGiantForm: true
   },
   {
     id: "002",
     name: "Krokalis",
     image: krokalisImage,
-    categories: []
+    categories: [],
+    area: "Vulcan"
   },
   {
     id: "003",
     name: "Puncino",
     image: puncinoImage,
-    categories: ["Halloween"]
+    categories: ["Halloween"],
+    hasGiantForm: true
   },
   {
     id: "004",

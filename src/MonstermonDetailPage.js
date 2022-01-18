@@ -11,7 +11,6 @@ export function MonstermonDetailPage() {
       <h3>
         Monstermon {monstermon.id}: {monstermon.name}{" "}
         {monstermon.hp ? `(HP ${monstermon.hp})` : null}
-        {monstermon.home ? ` @ ${monstermon.home}` : null}
       </h3>
 
       <div style={{ display: "flex" }}>
@@ -20,18 +19,20 @@ export function MonstermonDetailPage() {
           style={{ width: "50%" }}
           alt={monstermon.name}
         />
-        <div style={{ padding: "10px" }}>
-          {monstermon?.attacks ? (
-            <ul style={{ padding: 0 }}>
-              {monstermon?.attacks?.map(([name, value]) => (
-                <li>
-                  {name}: {value}
-                </li>
-              ))}
-            </ul>
-          ) : null}
-          {monstermon.hasGiantForm ? "Has" : "Doesn't have"} giant form
-        </div>
+
+        {monstermon.area ? `Area: ${monstermon.area}` : null}
+      </div>
+      <div style={{ padding: "10px" }}>
+        {monstermon?.attacks ? (
+          <ul style={{ padding: 0 }}>
+            {monstermon?.attacks?.map(([name, value]) => (
+              <li>
+                {name}: {value}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {monstermon.hasGiantForm ? "Has" : "Doesn't have"} giant form
       </div>
     </div>
   );
