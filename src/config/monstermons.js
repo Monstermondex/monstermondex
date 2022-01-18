@@ -18,7 +18,9 @@ export const monstermons = [
       ["Drill", 60],
       ["Grassstorm", 100],
       ["Leaf-kuter", 90]
-    ]
+    ],
+    home: "Sweaty Jungle",
+    hasGiantForm: true
   },
   {
     id: "002",
