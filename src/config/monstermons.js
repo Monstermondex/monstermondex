@@ -70,6 +70,12 @@ export const monstermons = [
     id: "008",
     name: "Sleepydux",
     image: sleepyduxImage,
-    categories: []
+    categories: [],
+    area: "Open green plains on top of mountains with low oxygen levels",
+    attacks: [
+      ["sleepbeam", "opponent sleeps"],
+      ["clone", "clones itself + 70 damage"],
+      ["healing", "self-heal"]
+    ]
   }
 ];

@@ -41,13 +41,6 @@ export default function App() {
           element={<MonstermonDetailPage />}
         />
       </Routes>
-      {/*<Route path="/">
-          <Route index element={<MonstermonListing />} />
-          <Route path="monstermons" element={<MonstermonListing />}>
-            <Route path=":monstermonId" element={<MonstermonDetailPage />} />
-          </Route>
-        </Route>
-       </Routes>*/}
     </BrowserRouter>
   );
 }
